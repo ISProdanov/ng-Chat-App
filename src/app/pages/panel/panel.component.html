@@ -14,9 +14,11 @@
             Messages
           </a>
 
-<!--          <ul>-->
-<!--            <li *ngFor="let room of user.chatRooms">{{room}}</li>-->
-<!--          </ul>-->
+          <ul class="user-rooms">
+            <li *ngFor="let room of user.chatRooms">
+              {{ room }}
+            </li>
+          </ul>
         </li>
 
         <li class="nav-item">
@@ -30,6 +32,12 @@
             <i aria-hidden="true" class="fa fa-user-plus"></i>
             Contacts
           </a>
+
+          <ul class="user-rooms">
+            <li *ngFor="let contact of user.contacts">
+              {{ contact }}
+            </li>
+          </ul>
         </li>
 
         <li class="nav-item mt-auto">
@@ -58,6 +66,8 @@
 
         <li class="nav-item">
           <a
+            (click)="onLogout()"
+
             class="nav-link"
             href="javascript:void(0)"
             id="log-out"
