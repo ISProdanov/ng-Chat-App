@@ -1,13 +1,76 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 p-0">
-      <mat-tab-group>
-        <mat-tab label="personal-settings">
-          <app-panel-settings-personal></app-panel-settings-personal>
-        </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
-      </mat-tab-group>
+    <div class="col-12">
+      <figure
+        class="user-avatar {{!user.avatarUrl ? 'user-avatar--has-icon' : 'user-avatar--has-image'}}"
+      >
+        <ng-container *ngIf="user.avatarUrl; else defaultAvatar">
+          <img src="" alt="">
+        </ng-container>
+
+        <ng-template #defaultAvatar>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </ng-template>
+      </figure>
+    </div>
+
+    <div class="col-12">
+      <p>{{ user.firstName + ' ' + user.lastName }}</p>
+
+      <p>
+        {{ user.email }}
+
+        <button
+          *ngIf="checkType('change-email')"
+
+          type="submit"
+        >
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        </button>
+
+        <button
+          (click)="toggleForm('change-email')"
+
+          type="button"
+        >
+          <i
+            class="fa {{ checkType('change-email') ? 'fa-times' : 'fa-pencil' }}"
+
+            aria-hidden="true"
+          ></i>
+        </button>
+      </p>
+
+      <p>
+        Change Password
+
+        <button
+          *ngIf="checkType('change-password')"
+
+          type="submit"
+        >
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        </button>
+
+        <button
+          (click)="toggleForm('change-password')"
+
+          type="button"
+        >
+          <i
+            class="fa {{ checkType('change-password') ? 'fa-times' : 'fa-pencil' }}"
+
+            aria-hidden="true"
+          ></i>
+        </button>
+      </p>
+    </div>
+
+    <div class="col-12">
+      <app-panel-settings-personal
+        [user]="user"
+        [formState]="hiddenForm"
+      ></app-panel-settings-personal>
     </div>
   </div>
 </div>

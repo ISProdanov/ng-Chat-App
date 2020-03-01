@@ -3,6 +3,8 @@ import {ActivatedRoute, Data, Router} from '@angular/router';
 
 import {Subscription} from 'rxjs';
 
+import {UserModel} from '../../../../shared/models';
+
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -10,7 +12,7 @@ import {Subscription} from 'rxjs';
 })
 export class MessagesComponent implements OnInit, OnDestroy {
   private activatedRouteSubscription: Subscription;
-  public user;
+  public user: UserModel;
 
   constructor(
     private  router: Router,
