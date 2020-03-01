@@ -1,0 +1,5 @@
+<div class="feed">
+  <div *ngFor="let feed of feeds | async" class="feeds-wrapper">
+    <app-message [messageInterface]="feed"></app-message>
+  </div>
+</div>

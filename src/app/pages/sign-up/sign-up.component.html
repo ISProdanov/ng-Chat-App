@@ -1,0 +1,58 @@
+<h2>Sign Up</h2>
+
+<form [formGroup]="signUpFormGroup" (ngSubmit)="onFormSubmit()">
+  <mat-form-field>
+    <input
+      formControlName="username"
+      matInput
+      placeholder="Username"
+      type="text">
+
+    <mat-error *ngIf="signUpFormGroup.get('username').hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="email"
+      matInput
+      placeholder="Email"
+      type="text">
+
+    <mat-error
+      *ngIf="signUpFormGroup.get('email').hasError('pattern') && !signUpFormGroup.get('email').hasError('required')">
+      Oops, wrong pattern buddy!
+    </mat-error>
+
+    <mat-error *ngIf="signUpFormGroup.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      formControlName="password"
+      matInput
+      placeholder="Password"
+      type="password">
+
+    <mat-error
+      *ngIf="signUpFormGroup.get('password').hasError('password') && !signUpFormGroup.get('password').hasError('required')">
+      Please enter a valid password
+    </mat-error>
+
+    <mat-error *ngIf="signUpFormGroup.get('password').hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="row d-flex justify-content-center">
+    <button
+      (click)="clearForm()"
+      type="button"
+    >Cancel</button>
+
+    <button class="btn-primary ml-2" type="submit">Sign Up</button>
+  </div>
+</form>

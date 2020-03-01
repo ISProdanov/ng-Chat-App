@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row message">
+    <div class="col-12 message__body">
+      <p>{{ messageModel.message }}</p>
+    </div>
+
+    <div class="col-12">
+      <div class="message__meta text-right">
+        <p>{{ messageModel.fromUser }}</p>
+
+        <!--        <figure class="avatar">-->
+        <!--          <img [src]='message.fromUser' alt="user-avatar">-->
+        <!--        </figure>-->
+
+        <p class="message__meta-time">{{ messageModel.timeStamp }}</p>
+      </div>
+    </div>
+  </div>
+</div>

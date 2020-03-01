@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*
+ * Colors Variables
+*/
+
+$primary-color: #33b5e5 !important;
+$primary-color-dark: #0099CC !important;
+$success-color: #00C851 !important;
+$success-color-dark: #007E33 !important;
+$warning-color: #ffbb33 !important;
+$warning-color-dark: #FF8800 !important;
+$danger-color: #ff4444 !important;
+$danger-color-dark: #CC0000 !important;
+$grey-color: #2E2E2E !important;
+$grey-color-dark: #212121 !important;
+$grey-color-light: #4d4d4d !important;
+$white-color: #ffff !important;
+
+.sidebar {
+  height: 100%;
+  background-color: $grey-color;
+
+  a {
+    color: $white-color;
+  }
+}
+
+.nav-tabs {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  border: none;
+
+  #messages {
+    background-color: $primary-color;
+
+    &:focus,
+    &:hover {
+      background-color: $primary-color-dark;
+    }
+  }
+
+  #contacts {
+    background-color: $success-color;
+
+    &:focus,
+    &:hover {
+      background-color: $success-color-dark;
+    }
+  }
+
+  a {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  .nav-link {
+    border-radius: 0;
+    transition: .25s background-color;
+
+    &:focus,
+    &:hover {
+      border-color: transparent;
+      background-color: $grey-color-dark;
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+<form>
+  <mat-form-field class="example-full-width">
+    <input
+      (keydown)="handleSubmit($event)"
+      [(ngModel)]="message"
+
+      matInput
+      name="chat-message"
+      placeholder="Type a message">
+  </mat-form-field>
+
+  <button
+    (click)="onFormSubmit()"
+
+    class="btn-primary"
+    type="button"
+  >
+    Send
+
+    <i aria-hidden="true" class="fa fa-paper-plane-o"></i>
+  </button>
+</form>
